@@ -12,7 +12,7 @@ const trustBadges = [
 ];
 
 export function Hero() {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
   const [mounted, setMounted] = useState(false);
 
   // Mouse parallax values
