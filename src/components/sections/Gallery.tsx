@@ -76,15 +76,15 @@ export function Gallery() {
           transition={{ duration: 0.55 }}
           className="mb-12"
         >
-          <span className="inline-block border border-white/15 text-white/50 text-sm font-medium px-4 py-1.5 rounded-full mb-5">
+          <span className="inline-block border border-[#1A3C5E]/20 text-[#1A3C5E] text-sm font-medium px-4 py-1.5 rounded-full mb-5">
             Nuestros proyectos
           </span>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <h2 className="text-3xl md:text-5xl font-black text-white leading-tight">
+            <h2 className="text-3xl md:text-5xl font-black text-[#1A3C5E] leading-tight">
               Proyectos reales,<br />
-              <span className="text-white/40">resultados reales.</span>
+              <span className="text-[#1A3C5E]/50">resultados reales.</span>
             </h2>
-            <p className="text-white/40 text-sm max-w-xs leading-relaxed">
+            <p className="text-[#4A4A4A] text-sm max-w-xs leading-relaxed">
               Cada ventana instalada tiene detrás una familia o empresa que confió en CDC SPA.
             </p>
           </div>
@@ -129,7 +129,7 @@ export function Gallery() {
         >
           <button
             onClick={() => document.querySelector("#cotizar")?.scrollIntoView({ behavior: "smooth" })}
-            className="inline-flex items-center gap-2 border border-white/20 text-white/70 hover:text-white hover:border-white/40 font-semibold px-8 py-3.5 rounded-full transition-all duration-200 text-sm"
+            className="inline-flex items-center gap-2 border border-[#1A3C5E]/30 text-[#1A3C5E] hover:bg-[#1A3C5E] hover:text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-200 text-sm"
           >
             Cotiza tu proyecto hoy →
           </button>

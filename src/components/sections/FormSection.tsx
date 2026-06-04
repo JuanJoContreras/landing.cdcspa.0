@@ -89,11 +89,11 @@ export function FormSection() {
                 { step: "4", title: "Instalación profesional", desc: "Con garantía incluida" },
               ].map((item) => (
                 <li key={item.step} className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-green-400/20 border border-[#EA580C]/30 text-[#EA580C] flex items-center justify-center text-sm font-bold shrink-0 mt-0.5">
+                  <div className="w-8 h-8 rounded-full bg-[#1A3C5E] text-white flex items-center justify-center text-sm font-bold shrink-0 mt-0.5">
                     {item.step}
                   </div>
                   <div>
-                    <p className="font-semibold text-white text-sm">{item.title}</p>
+                    <p className="font-semibold text-[#1A3C5E] text-sm">{item.title}</p>
                     <p className="text-[#8A8A8E] text-xs">{item.desc}</p>
                   </div>
                 </li>

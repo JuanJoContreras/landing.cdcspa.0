@@ -34,7 +34,9 @@ export function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#1A3C5E]/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+        scrolled
+          ? "bg-[#1A3C5E] shadow-lg"
+          : "bg-[#1A3C5E]/80 backdrop-blur-md"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,24 +49,24 @@ export function Navbar() {
             className="flex items-center gap-3 shrink-0 group"
           >
             <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
-              <span className="text-[#0A0A0A] font-black text-xs">CDC</span>
+              <span className="text-[#1A3C5E] font-black text-xs">CDC</span>
             </div>
             <div className="hidden sm:block">
               <p className="text-white font-bold text-sm leading-tight">CDC SPA</p>
-              <p className="text-white/35 text-xs">Cierres de Cristal</p>
+              <p className="text-white/60 text-xs">Cierres de Cristal</p>
             </div>
           </a>
 
-          {/* Desktop nav - centered */}
-          <ul className="hidden lg:flex items-center gap-6 flex-1 justify-center">
+          {/* Desktop nav */}
+          <ul className="hidden lg:flex items-center gap-7 flex-1 justify-center">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <button
                   onClick={() => handleNavClick(link.href)}
-                  className="text-white/55 hover:text-white text-sm font-medium transition-colors duration-200 whitespace-nowrap relative group"
+                  className="text-white/75 hover:text-white text-sm font-medium transition-colors duration-200 whitespace-nowrap relative group"
                 >
                   {link.label}
-                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-green-400 group-hover:w-full transition-all duration-300" />
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#EA580C] group-hover:w-full transition-all duration-300" />
                 </button>
               </li>
             ))}
@@ -72,12 +74,13 @@ export function Navbar() {
 
           {/* Desktop right */}
           <div className="hidden md:flex items-center gap-4 shrink-0">
-            <a href="tel:+56966879910" className="flex items-center gap-1.5 text-white/45 hover:text-white/70 text-sm transition-colors whitespace-nowrap">
-              <Phone size={13} aria-hidden /> <span className="hidden xl:inline">{PHONE_DISPLAY}</span>
+            <a href="tel:+56966879910" className="flex items-center gap-1.5 text-white/60 hover:text-white text-sm transition-colors whitespace-nowrap">
+              <Phone size={13} aria-hidden />
+              <span className="hidden xl:inline">{PHONE_DISPLAY}</span>
             </a>
             <button
               onClick={() => handleNavClick("#cotizar")}
-              className="btn-primary text-sm px-5 py-2.5 transition-all whitespace-nowrap"
+              className="bg-[#EA580C] hover:bg-[#C2410C] text-white font-bold text-sm px-5 py-2.5 rounded-full transition-all whitespace-nowrap hover:-translate-y-0.5"
             >
               Cotizar
             </button>
@@ -86,7 +89,7 @@ export function Navbar() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-white/70 hover:text-white p-2 rounded-lg hover:bg-white/8 transition-colors shrink-0"
+            className="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors shrink-0"
             aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
           >
             {menuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -102,25 +105,25 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.22 }}
-            className="md:hidden bg-[#1A3C5E]/98 border-t border-white/10 overflow-hidden backdrop-blur-md"
+            className="md:hidden bg-[#1A3C5E] border-t border-white/10 overflow-hidden"
           >
             <div className="px-4 pt-2 pb-5 space-y-1">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className="block w-full text-left text-white/60 hover:text-white hover:bg-white/5 px-4 py-3 rounded-xl text-sm font-medium transition-colors"
+                  className="block w-full text-left text-white/75 hover:text-white hover:bg-white/10 px-4 py-3 rounded-xl text-sm font-medium transition-colors"
                 >
                   {link.label}
                 </button>
               ))}
               <div className="pt-3 flex flex-col gap-2">
-                <a href="tel:+56966879910" className="flex items-center gap-2 text-white/40 px-4 py-2 text-sm">
+                <a href="tel:+56966879910" className="flex items-center gap-2 text-white/50 px-4 py-2 text-sm">
                   <Phone size={13} /> {PHONE_DISPLAY}
                 </a>
                 <button
                   onClick={() => handleNavClick("#cotizar")}
-                  className="btn-primary w-full justify-center text-sm"
+                  className="bg-[#EA580C] text-white font-bold w-full py-3 rounded-full text-sm hover:bg-[#C2410C] transition-colors"
                 >
                   Solicitar Cotización
                 </button>

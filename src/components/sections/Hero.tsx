@@ -56,7 +56,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="font-black text-white leading-[0.95] tracking-tight mb-6"
+              className="font-display font-black text-white leading-[0.95] tracking-tight mb-6"
               style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)" }}
             >
               Ventanas de PVC
