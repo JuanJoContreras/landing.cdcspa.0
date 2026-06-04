@@ -15,7 +15,7 @@ export function UrgencyBanner() {
           animate={{ height: "auto", opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="bg-brand-cta text-white text-xs sm:text-sm overflow-hidden"
+          className="bg-[#0A0A0A]/95 border-b border-white/10 text-white text-xs sm:text-sm overflow-hidden"
           role="banner"
           aria-label="Oferta especial"
         >

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
-import { WHATSAPP_URL, PHONE_DISPLAY } from "@/lib/utils";
+import { PHONE_DISPLAY } from "@/lib/utils";
 
 const navLinks = [
   { href: "#nosotros", label: "Nosotros" },
@@ -34,22 +34,20 @@ export function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#0A0A0A]/95 backdrop-blur-md border-b border-white/8"
-          : "bg-transparent"
+        scrolled ? "bg-[#0A0A0A]/95 backdrop-blur-md border-b border-white/8" : "bg-transparent"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-16 md:h-20 gap-4">
+
           {/* Logo */}
           <a
             href="#inicio"
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-            className="flex items-center gap-3 group"
-            aria-label="CDC SPA - Inicio"
+            className="flex items-center gap-3 shrink-0 group"
           >
-            <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
-              <span className="text-[#0A0A0A] font-black text-xs leading-none">CDC</span>
+            <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+              <span className="text-[#0A0A0A] font-black text-xs">CDC</span>
             </div>
             <div className="hidden sm:block">
               <p className="text-white font-bold text-sm leading-tight">CDC SPA</p>
@@ -57,13 +55,13 @@ export function Navbar() {
             </div>
           </a>
 
-          {/* Desktop links */}
-          <ul className="hidden lg:flex items-center gap-7">
+          {/* Desktop nav - centered */}
+          <ul className="hidden lg:flex items-center gap-6 flex-1 justify-center">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <button
                   onClick={() => handleNavClick(link.href)}
-                  className="text-white/55 hover:text-white text-sm font-medium transition-colors duration-200 relative group"
+                  className="text-white/55 hover:text-white text-sm font-medium transition-colors duration-200 whitespace-nowrap relative group"
                 >
                   {link.label}
                   <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-green-400 group-hover:w-full transition-all duration-300" />
@@ -72,14 +70,14 @@ export function Navbar() {
             ))}
           </ul>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-4">
-            <a href={`tel:+56966879910`} className="flex items-center gap-1.5 text-white/45 hover:text-white/70 text-sm transition-colors" aria-label="Llamar">
-              <Phone size={13} aria-hidden /> <span className="hidden lg:inline">{PHONE_DISPLAY}</span>
+          {/* Desktop right */}
+          <div className="hidden md:flex items-center gap-4 shrink-0">
+            <a href="tel:+56966879910" className="flex items-center gap-1.5 text-white/45 hover:text-white/70 text-sm transition-colors whitespace-nowrap">
+              <Phone size={13} aria-hidden /> <span className="hidden xl:inline">{PHONE_DISPLAY}</span>
             </a>
             <button
               onClick={() => handleNavClick("#cotizar")}
-              className="btn-primary text-sm px-5 py-2.5"
+              className="bg-white text-[#0A0A0A] font-bold text-sm px-5 py-2.5 rounded-full hover:bg-white/90 transition-all whitespace-nowrap"
             >
               Cotizar
             </button>
@@ -88,9 +86,8 @@ export function Navbar() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-white/70 hover:text-white p-2 rounded-lg hover:bg-white/8 transition-colors"
+            className="md:hidden text-white/70 hover:text-white p-2 rounded-lg hover:bg-white/8 transition-colors shrink-0"
             aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
-            aria-expanded={menuOpen}
           >
             {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -118,10 +115,13 @@ export function Navbar() {
                 </button>
               ))}
               <div className="pt-3 flex flex-col gap-2">
-                <a href={`tel:+56966879910`} className="flex items-center gap-2 text-white/40 px-4 py-2 text-sm">
+                <a href="tel:+56966879910" className="flex items-center gap-2 text-white/40 px-4 py-2 text-sm">
                   <Phone size={13} /> {PHONE_DISPLAY}
                 </a>
-                <button onClick={() => handleNavClick("#cotizar")} className="btn-primary w-full justify-center text-sm">
+                <button
+                  onClick={() => handleNavClick("#cotizar")}
+                  className="bg-white text-[#0A0A0A] font-bold w-full py-3 rounded-full text-sm"
+                >
                   Solicitar Cotización
                 </button>
               </div>

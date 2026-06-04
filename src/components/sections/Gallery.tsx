@@ -35,13 +35,13 @@ const projects = [
     type: "Abatible – Color antracita",
   },
   {
-    src: "/images/VENTANA_BAÑO_2.jpeg",
+    src: "/images/VENTANA_BANO_2.jpeg",
     alt: "Ventana PVC folio nogal en baño con jardín interior",
     location: "La Reina, RM",
     type: "Fija – Baño con jardín",
   },
   {
-    src: "/images/VENTANA_BAÑO_FUERA.jpeg",
+    src: "/images/VENTANA_BANO_FUERA.jpeg",
     alt: "Vista exterior ventana PVC folio nogal en jardín",
     location: "La Reina, RM",
     type: "Vista exterior – Folio nogal",
