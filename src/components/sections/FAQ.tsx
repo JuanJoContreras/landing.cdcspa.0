@@ -109,7 +109,7 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="py-20 md:py-28 bg-[#0A0A0A]"
+      className="py-20 md:py-28 bg-white"
       aria-label="Preguntas frecuentes"
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

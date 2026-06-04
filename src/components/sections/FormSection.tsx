@@ -54,7 +54,7 @@ export function FormSection() {
   };
 
   return (
-    <section id="cotizar" className="py-20 md:py-28 bg-[#0F0F0F] relative overflow-hidden" aria-label="Formulario de cotización">
+    <section id="cotizar" className="py-20 md:py-28 bg-[#F5F5F7] relative overflow-hidden" aria-label="Formulario de cotización">
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-green-500/5 rounded-full blur-3xl" />
       </div>
@@ -70,14 +70,14 @@ export function FormSection() {
             transition={{ duration: 0.55 }}
             className="lg:col-span-2"
           >
-            <span className="inline-block border border-green-400/30 text-green-400 text-sm font-semibold px-4 py-1.5 rounded-full mb-5">
+            <span className="inline-block border border-[#EA580C]/30 text-[#EA580C] text-sm font-semibold px-4 py-1.5 rounded-full mb-5">
               Cotización sin costo
             </span>
-            <h2 className="text-3xl md:text-4xl font-black text-white leading-tight mb-5">
+            <h2 className="text-3xl md:text-4xl font-black text-[#1A3C5E] leading-tight mb-5">
               Recibe tu cotización en menos de{" "}
-              <span className="text-green-400">24 horas</span>
+              <span className="text-[#EA580C]">24 horas</span>
             </h2>
-            <p className="text-white/50 leading-relaxed mb-8 text-sm">
+            <p className="text-[#4A4A4A] leading-relaxed mb-8 text-sm">
               Completa el formulario y uno de nuestros ejecutivos te contactará con una cotización detallada y personalizada para tu proyecto.
             </p>
 
@@ -89,19 +89,19 @@ export function FormSection() {
                 { step: "4", title: "Instalación profesional", desc: "Con garantía incluida" },
               ].map((item) => (
                 <li key={item.step} className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-green-400/20 border border-green-400/30 text-green-400 flex items-center justify-center text-sm font-bold shrink-0 mt-0.5">
+                  <div className="w-8 h-8 rounded-full bg-green-400/20 border border-[#EA580C]/30 text-[#EA580C] flex items-center justify-center text-sm font-bold shrink-0 mt-0.5">
                     {item.step}
                   </div>
                   <div>
                     <p className="font-semibold text-white text-sm">{item.title}</p>
-                    <p className="text-white/35 text-xs">{item.desc}</p>
+                    <p className="text-[#8A8A8E] text-xs">{item.desc}</p>
                   </div>
                 </li>
               ))}
             </ol>
 
             <div className="mt-10 p-5 bg-[#25D366]/10 border border-[#25D366]/20 rounded-2xl">
-              <p className="text-white font-semibold text-sm mb-3">¿Prefieres hablar directo?</p>
+              <p className="text-[#1A3C5E] font-semibold text-sm mb-3">¿Prefieres hablar directo?</p>
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
@@ -124,7 +124,7 @@ export function FormSection() {
             transition={{ duration: 0.55 }}
             className="lg:col-span-3"
           >
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-10">
+            <div className="bg-white rounded-3xl shadow-[0_8px_40px_rgba(26,60,94,0.12)] p-6 md:p-10">
               <AnimatePresence mode="wait">
                 {status === "success" ? (
                   <motion.div
@@ -151,8 +151,8 @@ export function FormSection() {
                 ) : (
                   <motion.form key="form" onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-4">
                     <div className="mb-4">
-                      <h3 className="text-xl font-bold text-white">Solicita tu cotización gratuita</h3>
-                      <p className="text-white/35 text-xs mt-1">Todos los campos marcados son obligatorios</p>
+                      <h3 className="text-xl font-bold text-[#1A3C5E]">Solicita tu cotización gratuita</h3>
+                      <p className="text-[#8A8A8E] text-xs mt-1">Todos los campos marcados son obligatorios</p>
                     </div>
 
                     <div className="grid sm:grid-cols-2 gap-4">
@@ -163,7 +163,7 @@ export function FormSection() {
                         <input id="nombre" type="text" placeholder="Ej: María González"
                           {...register("nombre")}
                           className={`input-field ${errors.nombre ? "input-error" : ""}`} />
-                        {errors.nombre && <p className="text-red-400 text-xs mt-1">{errors.nombre.message}</p>}
+                        {errors.nombre && <p className="text-red-500 text-xs mt-1">{errors.nombre.message}</p>}
                       </div>
                       <div>
                         <label htmlFor="telefono" className="label-field">
@@ -172,7 +172,7 @@ export function FormSection() {
                         <input id="telefono" type="tel" placeholder="+56 9 XXXX XXXX"
                           {...register("telefono")}
                           className={`input-field ${errors.telefono ? "input-error" : ""}`} />
-                        {errors.telefono && <p className="text-red-400 text-xs mt-1">{errors.telefono.message}</p>}
+                        {errors.telefono && <p className="text-red-500 text-xs mt-1">{errors.telefono.message}</p>}
                       </div>
                     </div>
 
@@ -184,7 +184,7 @@ export function FormSection() {
                         <input id="email" type="email" placeholder="correo@ejemplo.cl"
                           {...register("email")}
                           className={`input-field ${errors.email ? "input-error" : ""}`} />
-                        {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>}
+                        {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
                       </div>
                       <div>
                         <label htmlFor="comuna" className="label-field">
@@ -193,7 +193,7 @@ export function FormSection() {
                         <input id="comuna" type="text" placeholder="Ej: Las Condes, Santiago"
                           {...register("comuna")}
                           className={`input-field ${errors.comuna ? "input-error" : ""}`} />
-                        {errors.comuna && <p className="text-red-400 text-xs mt-1">{errors.comuna.message}</p>}
+                        {errors.comuna && <p className="text-red-500 text-xs mt-1">{errors.comuna.message}</p>}
                       </div>
                     </div>
 
@@ -207,7 +207,7 @@ export function FormSection() {
                           <option value="" disabled>Selecciona una opción</option>
                           {tiposProyecto.map((t) => <option key={t} value={t}>{t}</option>)}
                         </select>
-                        {errors.tipoProyecto && <p className="text-red-400 text-xs mt-1">{errors.tipoProyecto.message}</p>}
+                        {errors.tipoProyecto && <p className="text-red-500 text-xs mt-1">{errors.tipoProyecto.message}</p>}
                       </div>
                       <div>
                         <label htmlFor="cantidadVentanas" className="label-field">
@@ -218,7 +218,7 @@ export function FormSection() {
                           <option value="" disabled>Selecciona una opción</option>
                           {cantidadesVentanas.map((c) => <option key={c} value={c}>{c}</option>)}
                         </select>
-                        {errors.cantidadVentanas && <p className="text-red-400 text-xs mt-1">{errors.cantidadVentanas.message}</p>}
+                        {errors.cantidadVentanas && <p className="text-red-500 text-xs mt-1">{errors.cantidadVentanas.message}</p>}
                       </div>
                     </div>
 
@@ -232,14 +232,14 @@ export function FormSection() {
                     </div>
 
                     <button type="submit" disabled={status === "loading"}
-                      className="w-full inline-flex items-center justify-center gap-2 bg-white text-[#0A0A0A] font-bold py-4 rounded-full hover:bg-white/90 transition-all disabled:opacity-60 text-base mt-2">
+                      className="w-full btn-primary justify-center font-bold py-4 rounded-full hover:bg-white/90 transition-all disabled:opacity-60 text-base mt-2">
                       {status === "loading" ? (
                         <><Loader2 size={20} className="animate-spin" /> Enviando...</>
                       ) : (
                         <><Send size={18} /> Enviar solicitud de cotización</>
                       )}
                     </button>
-                    <p className="text-white/25 text-xs text-center">Sin compromiso · Respuesta a la brevedad</p>
+                    <p className="text-[#8A8A8E] text-xs text-center">Sin compromiso · Respuesta a la brevedad</p>
                   </motion.form>
                 )}
               </AnimatePresence>

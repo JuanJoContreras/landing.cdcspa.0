@@ -64,7 +64,7 @@ export function Gallery() {
   return (
     <section
       id="proyectos"
-      className="py-20 md:py-28 bg-[#0F0F0F]"
+      className="py-20 md:py-28 bg-[#F5F5F7]"
       aria-label="Galería de proyectos reales"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

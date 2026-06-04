@@ -69,7 +69,7 @@ export function WindowTypes() {
   return (
     <section
       id="productos"
-      className="py-20 md:py-28 bg-[#0A0A0A]"
+      className="py-20 md:py-28 bg-white"
       aria-label="Tipos de ventanas disponibles"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

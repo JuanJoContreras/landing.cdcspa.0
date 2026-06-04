@@ -34,7 +34,7 @@ export function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#0A0A0A]/95 backdrop-blur-md border-b border-white/8" : "bg-transparent"
+        scrolled ? "bg-[#1A3C5E]/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,7 +77,7 @@ export function Navbar() {
             </a>
             <button
               onClick={() => handleNavClick("#cotizar")}
-              className="bg-white text-[#0A0A0A] font-bold text-sm px-5 py-2.5 rounded-full hover:bg-white/90 transition-all whitespace-nowrap"
+              className="btn-primary text-sm px-5 py-2.5 transition-all whitespace-nowrap"
             >
               Cotizar
             </button>
@@ -102,7 +102,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.22 }}
-            className="md:hidden bg-[#0A0A0A]/98 border-t border-white/8 overflow-hidden backdrop-blur-md"
+            className="md:hidden bg-[#1A3C5E]/98 border-t border-white/10 overflow-hidden backdrop-blur-md"
           >
             <div className="px-4 pt-2 pb-5 space-y-1">
               {navLinks.map((link) => (
@@ -120,7 +120,7 @@ export function Navbar() {
                 </a>
                 <button
                   onClick={() => handleNavClick("#cotizar")}
-                  className="bg-white text-[#0A0A0A] font-bold w-full py-3 rounded-full text-sm"
+                  className="btn-primary w-full justify-center text-sm"
                 >
                   Solicitar Cotización
                 </button>

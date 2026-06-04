@@ -6,28 +6,29 @@
 
 @layer base {
   html { scroll-behavior: smooth; }
-  body { @apply font-sans antialiased bg-[#0A0A0A] text-white; }
+  body { @apply font-sans antialiased bg-white text-[#1C1C1E]; }
   * { @apply box-border; }
-  ::selection { background-color: #4ade80; color: #0A0A0A; }
+  ::selection { background-color: #1A3C5E; color: white; }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-white text-[#0A0A0A] font-bold px-7 py-3.5 rounded-full transition-all duration-200 hover:bg-white/90 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#0A0A0A];
+    @apply inline-flex items-center gap-2 bg-[#EA580C] hover:bg-[#C2410C] text-white font-semibold px-7 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5 shadow-[0_4px_24px_rgba(234,88,12,0.35)] focus:outline-none focus:ring-2 focus:ring-[#EA580C] focus:ring-offset-2;
   }
   .btn-secondary {
-    @apply inline-flex items-center gap-2 border border-white/20 text-white/75 hover:text-white hover:border-white/40 font-semibold px-7 py-3.5 rounded-full transition-all duration-200 focus:outline-none;
+    @apply inline-flex items-center gap-2 bg-[#1A3C5E] hover:bg-[#2563A8] text-white font-semibold px-7 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5 focus:outline-none;
   }
-  .btn-cta {
-    @apply inline-flex items-center gap-2 bg-green-400 text-[#0A0A0A] font-bold px-7 py-3.5 rounded-full hover:bg-green-300 transition-all duration-200 hover:-translate-y-0.5;
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-[#1A3C5E] font-semibold px-7 py-3.5 rounded-full transition-all duration-200;
   }
-  .section-title { @apply text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight; }
-  .card-dark { @apply bg-white/[0.04] border border-white/8 rounded-2xl p-6 hover:bg-white/[0.07] transition-colors duration-300; }
+  .section-title { @apply text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A3C5E] leading-tight; }
+  .section-subtitle { @apply text-[#4A4A4A] text-lg md:text-xl leading-relaxed; }
+  .card { @apply bg-white rounded-2xl p-6 shadow-[0_2px_20px_rgba(0,0,0,0.07)] hover:shadow-[0_8px_40px_rgba(26,60,94,0.15)] transition-all duration-300; }
   .input-field {
-    @apply w-full px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-green-400/50 focus:border-green-400/50 transition-all duration-200 text-sm;
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-[#1C1C1E] placeholder-[#8A8A8E] focus:outline-none focus:ring-2 focus:ring-[#2563A8] focus:border-transparent transition-all duration-200 text-sm;
   }
-  .input-error { @apply border-red-500/50 focus:ring-red-400/50; }
-  .label-field { @apply block text-sm font-medium text-white/60 mb-1.5; }
+  .input-error { @apply border-red-400 focus:ring-red-400; }
+  .label-field { @apply block text-sm font-medium text-[#1C1C1E] mb-1.5; }
   .whatsapp-float {
     @apply fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#1da851] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
   }
@@ -35,4 +36,5 @@
 
 @layer utilities {
   .text-balance { text-wrap: balance; }
+  .bg-blur { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 }

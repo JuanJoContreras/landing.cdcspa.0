@@ -30,7 +30,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-[#050505] text-white border-t border-white/8" aria-label="Pie de página">
+    <footer className="bg-[#1C1C1E] text-white" aria-label="Pie de página">
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">

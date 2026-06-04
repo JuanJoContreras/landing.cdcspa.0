@@ -46,7 +46,7 @@ export function Testimonials() {
   return (
     <section
       id="testimonios"
-      className="py-20 md:py-28 bg-[#0F0F0F]"
+      className="py-20 md:py-28 bg-white"
       aria-label="Testimonios de clientes"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
