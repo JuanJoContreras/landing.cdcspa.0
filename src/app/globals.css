@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply font-sans antialiased bg-[#0A0A0A] text-white; }
+  * { @apply box-border; }
+  ::selection { background-color: #4ade80; color: #0A0A0A; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-white text-[#0A0A0A] font-bold px-7 py-3.5 rounded-full transition-all duration-200 hover:bg-white/90 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#0A0A0A];
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 border border-white/20 text-white/75 hover:text-white hover:border-white/40 font-semibold px-7 py-3.5 rounded-full transition-all duration-200 focus:outline-none;
+  }
+  .btn-cta {
+    @apply inline-flex items-center gap-2 bg-green-400 text-[#0A0A0A] font-bold px-7 py-3.5 rounded-full hover:bg-green-300 transition-all duration-200 hover:-translate-y-0.5;
+  }
+  .section-title { @apply text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight; }
+  .card-dark { @apply bg-white/[0.04] border border-white/8 rounded-2xl p-6 hover:bg-white/[0.07] transition-colors duration-300; }
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-green-400/50 focus:border-green-400/50 transition-all duration-200 text-sm;
+  }
+  .input-error { @apply border-red-500/50 focus:ring-red-400/50; }
+  .label-field { @apply block text-sm font-medium text-white/60 mb-1.5; }
+  .whatsapp-float {
+    @apply fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#1da851] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+}
