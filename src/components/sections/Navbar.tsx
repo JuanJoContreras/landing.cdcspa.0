@@ -70,6 +70,17 @@ export function Navbar() {
                 </button>
               </li>
             ))}
+            {/* ClaroGlass link */}
+            <li>
+              <a
+                href="https://claroglass.cl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#C9A227] hover:text-white text-sm font-semibold whitespace-nowrap border border-[#C9A227]/50 hover:border-white/50 px-3 py-1 rounded-full transition-all duration-200"
+              >
+                ClaroGlass →
+              </a>
+            </li>
           </ul>
 
           {/* Desktop right */}
@@ -117,6 +128,15 @@ export function Navbar() {
                   {link.label}
                 </button>
               ))}
+              {/* ClaroGlass mobile */}
+              <a
+                href="https://claroglass.cl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-left text-[#C9A227] hover:text-white border border-[#C9A227]/40 hover:bg-white/10 px-4 py-3 rounded-xl text-sm font-semibold transition-colors"
+              >
+                ClaroGlass →
+              </a>
               <div className="pt-3 flex flex-col gap-2">
                 <a href="tel:+56966879910" className="flex items-center gap-2 text-white/50 px-4 py-2 text-sm">
                   <Phone size={13} /> {PHONE_DISPLAY}
