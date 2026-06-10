@@ -2,8 +2,9 @@
 
 import { Phone, Mail, Clock, MapPin, Instagram } from "lucide-react";
 import Image from "next/image";
-import { WHATSAPP_URL, EMAIL, PHONE_DISPLAY, HOURS } from "@/lib/utils";
+import { WHATSAPP_URL, EMAIL, HOURS } from "@/lib/utils";
 
+const PHONE_PRIMARY = "(+56 9) 6687 9910";
 const PHONE_SECONDARY = "(+56 9) 4753 3300";
 
 const navLinks = [
@@ -57,7 +58,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-white/10 hover:bg-[#16A34A] rounded-lg flex items-center justify-center transition-colors duration-200"
-                aria-label="Instagram CDC SPA – Ventanas PVC Santiago"
+                aria-label="Instagram CDC SPA"
               >
                 <Instagram size={16} aria-hidden />
               </a>
@@ -113,18 +114,12 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-white text-sm uppercase tracking-wider mb-5">Contacto</h3>
             <ul className="space-y-4">
-              <li>
-                <a
-                  href="tel:+56966879910"
-                  className="flex items-start gap-3 text-white/60 hover:text-white text-sm transition-colors group"
-                  aria-label={`Llamar a CDC SPA al ${PHONE_DISPLAY}`}
-                >
-                  <Phone size={15} className="mt-0.5 shrink-0 group-hover:text-[#16A34A] transition-colors" aria-hidden />
-                  <div>
-                    <p>{PHONE_DISPLAY}</p>
-                    <p className="text-white/40 text-xs select-none">{PHONE_SECONDARY}</p>
-                  </div>
-                </a>
+              <li className="flex items-start gap-3 text-white/60 text-sm">
+                <Phone size={15} className="mt-0.5 shrink-0" aria-hidden />
+                <div>
+                  <p className="select-none">{PHONE_PRIMARY}</p>
+                  <p className="text-white/40 text-xs select-none">{PHONE_SECONDARY}</p>
+                </div>
               </li>
               <li>
                 <a
@@ -168,15 +163,17 @@ export function Footer() {
           <p className="text-white/40 text-xs">
             © {currentYear} CDC SPA – Cierres de Cristal · Ventanas PVC Santiago Chile. Todos los derechos reservados.
           </p>
-          <a
-            href="/politica-de-privacidad"
-            className="text-white/30 hover:text-white/60 text-xs underline underline-offset-2 transition-colors"
-          >
-            Política de Privacidad
-          </a>
+          <p className="text-white/30 text-xs">
+            <a
+              href="/politica-de-privacidad"
+              className="underline underline-offset-2 hover:text-white/60 transition-colors"
+            >
+              Política de Privacidad
+            </a>
+            {" — "}CDC SPA trata tus datos conforme a la Ley N° 19.628 de Chile.
+          </p>
         </div>
       </div>
     </footer>
   );
 }
-
