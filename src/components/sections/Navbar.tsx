@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { PHONE_DISPLAY } from "@/lib/utils";
 
+const PHONE_SECONDARY = "(+56 9) 4753 3300";
+
 const navLinks = [
   { href: "#nosotros", label: "Nosotros" },
   { href: "#beneficios", label: "Beneficios" },
@@ -85,10 +87,10 @@ export function Navbar() {
 
           {/* Desktop right */}
           <div className="hidden md:flex items-center gap-4 shrink-0">
-            <a href="tel:+56966879910" className="flex items-center gap-1.5 text-white/60 hover:text-white text-sm transition-colors whitespace-nowrap">
-              <Phone size={13} aria-hidden />
-              <span className="hidden xl:inline">{PHONE_DISPLAY}</span>
-            </a>
+            <div className="flex flex-col items-end text-sm">
+              <span className="text-white/60">{PHONE_DISPLAY}</span>
+              <span className="text-white/30 text-xs select-none">{PHONE_SECONDARY}</span>
+            </div>
             <button
               onClick={() => handleNavClick("#cotizar")}
               className="bg-[#EA580C] hover:bg-[#C2410C] text-white font-bold text-sm px-5 py-2.5 rounded-full transition-all whitespace-nowrap hover:-translate-y-0.5"
@@ -138,9 +140,10 @@ export function Navbar() {
                 ClaroGlass →
               </a>
               <div className="pt-3 flex flex-col gap-2">
-                <a href="tel:+56966879910" className="flex items-center gap-2 text-white/50 px-4 py-2 text-sm">
-                  <Phone size={13} /> {PHONE_DISPLAY}
-                </a>
+                <div className="flex flex-col px-4 py-2 text-sm">
+                  <span className="text-white/50">{PHONE_DISPLAY}</span>
+                  <span className="text-white/30 text-xs select-none">{PHONE_SECONDARY}</span>
+                </div>
                 <button
                   onClick={() => handleNavClick("#cotizar")}
                   className="bg-[#EA580C] text-white font-bold w-full py-3 rounded-full text-sm hover:bg-[#C2410C] transition-colors"

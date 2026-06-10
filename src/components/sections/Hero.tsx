@@ -36,8 +36,8 @@ export function Hero() {
       {/* Decorative glow */}
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-[#16A34A]/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
+      {/* Content — pt-36 cubre navbar (80px) + banner (~40px) + margen */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-16 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
           {/* Left */}
