@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-const PHONE_SECONDARY = "(+5600a09)00a0475300a03300";
-
 const navLinks = [
   { href: "#nosotros", label: "Nosotros" },
   { href: "#beneficios", label: "Beneficios" },
@@ -42,11 +40,9 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20 gap-4">
 
           {/* Logo */}
-          <a
-            href="#inicio"
+          <a href="#inicio"
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-            className="flex items-center gap-3 shrink-0 group"
-          >
+            className="flex items-center gap-3 shrink-0 group">
             <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
               <span className="text-[#1A3C5E] font-black text-xs">CDC</span>
             </div>
@@ -60,22 +56,16 @@ export function Navbar() {
           <ul className="hidden lg:flex items-center gap-7 flex-1 justify-center">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <button
-                  onClick={() => handleNavClick(link.href)}
-                  className="text-white/75 hover:text-white text-sm font-medium transition-colors duration-200 whitespace-nowrap relative group"
-                >
+                <button onClick={() => handleNavClick(link.href)}
+                  className="text-white/75 hover:text-white text-sm font-medium transition-colors duration-200 whitespace-nowrap relative group">
                   {link.label}
                   <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#EA580C] group-hover:w-full transition-all duration-300" />
                 </button>
               </li>
             ))}
             <li>
-              <a
-                href="https://claroglass.cl"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#C9A227] hover:text-white text-sm font-semibold whitespace-nowrap border border-[#C9A227]/50 hover:border-white/50 px-3 py-1 rounded-full transition-all duration-200"
-              >
+              <a href="https://claroglass.cl" target="_blank" rel="noopener noreferrer"
+                className="text-[#C9A227] hover:text-white text-sm font-semibold whitespace-nowrap border border-[#C9A227]/50 hover:border-white/50 px-3 py-1 rounded-full transition-all duration-200">
                 ClaroGlass →
               </a>
             </li>
@@ -83,21 +73,19 @@ export function Navbar() {
 
           {/* Desktop right */}
           <div className="hidden md:flex items-center gap-4 shrink-0">
-            <span className="text-white/40 text-xs select-none">{PHONE_SECONDARY}</span>
-            <button
-              onClick={() => handleNavClick("#cotizar")}
-              className="bg-[#EA580C] hover:bg-[#C2410C] text-white font-bold text-sm px-5 py-2.5 rounded-full transition-all whitespace-nowrap hover:-translate-y-0.5"
-            >
+            <span className="text-white/40 text-xs select-none">
+              (+56 9) 4753&#8209;3300
+            </span>
+            <button onClick={() => handleNavClick("#cotizar")}
+              className="bg-[#EA580C] hover:bg-[#C2410C] text-white font-bold text-sm px-5 py-2.5 rounded-full transition-all whitespace-nowrap hover:-translate-y-0.5">
               Cotizar
             </button>
           </div>
 
           {/* Mobile hamburger */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
+          <button onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors shrink-0"
-            aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
-          >
+            aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}>
             {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
@@ -115,28 +103,21 @@ export function Navbar() {
           >
             <div className="px-4 pt-2 pb-5 space-y-1">
               {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => handleNavClick(link.href)}
-                  className="block w-full text-left text-white/75 hover:text-white hover:bg-white/10 px-4 py-3 rounded-xl text-sm font-medium transition-colors"
-                >
+                <button key={link.href} onClick={() => handleNavClick(link.href)}
+                  className="block w-full text-left text-white/75 hover:text-white hover:bg-white/10 px-4 py-3 rounded-xl text-sm font-medium transition-colors">
                   {link.label}
                 </button>
               ))}
-              <a
-                href="https://claroglass.cl"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-left text-[#C9A227] hover:text-white border border-[#C9A227]/40 hover:bg-white/10 px-4 py-3 rounded-xl text-sm font-semibold transition-colors"
-              >
+              <a href="https://claroglass.cl" target="_blank" rel="noopener noreferrer"
+                className="block w-full text-left text-[#C9A227] hover:text-white border border-[#C9A227]/40 hover:bg-white/10 px-4 py-3 rounded-xl text-sm font-semibold transition-colors">
                 ClaroGlass →
               </a>
               <div className="pt-3 flex flex-col gap-2">
-                <span className="text-white/30 text-xs px-4 select-none">{PHONE_SECONDARY}</span>
-                <button
-                  onClick={() => handleNavClick("#cotizar")}
-                  className="bg-[#EA580C] text-white font-bold w-full py-3 rounded-full text-sm hover:bg-[#C2410C] transition-colors"
-                >
+                <span className="text-white/30 text-xs px-4 select-none">
+                  (+56 9) 4753&#8209;3300
+                </span>
+                <button onClick={() => handleNavClick("#cotizar")}
+                  className="bg-[#EA580C] text-white font-bold w-full py-3 rounded-full text-sm hover:bg-[#C2410C] transition-colors">
                   Solicitar Cotización
                 </button>
               </div>
