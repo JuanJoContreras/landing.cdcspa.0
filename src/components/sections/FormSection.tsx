@@ -85,7 +85,7 @@ export function FormSection() {
               {[
                 { step: "1", title: "Completas el formulario", desc: "Toma menos de 2 minutos" },
                 { step: "2", title: "Te contactamos", desc: "En menos de 24 horas hábiles" },
-                { step: "3", title: "Visita técnica gratuita", desc: "Medimos y asesoramos sin costo" },
+                { step: "3", title: "Rectificación de medidas", desc: "Al firmar contrato medimos cada vano con precisión" },
                 { step: "4", title: "Instalación profesional", desc: "Con garantía incluida" },
               ].map((item) => (
                 <li key={item.step} className="flex items-start gap-4">
@@ -136,15 +136,15 @@ export function FormSection() {
                     <div className="w-20 h-20 bg-green-400/10 rounded-full flex items-center justify-center">
                       <CheckCircle2 size={40} className="text-green-400" />
                     </div>
-                    <h3 className="text-2xl font-bold text-white">¡Cotización enviada!</h3>
-                    <p className="text-white/50 leading-relaxed max-w-sm text-sm">
-                      Un ejecutivo CDC te contactará en las próximas <strong className="text-white">24 horas hábiles</strong>.
+                    <h3 className="text-2xl font-bold text-[#1A3C5E]">¡Cotización enviada!</h3>
+                    <p className="text-[#4A4A4A] leading-relaxed max-w-sm text-sm">
+                      Un ejecutivo CDC te contactará en las próximas <strong>24 horas hábiles</strong>.
                     </p>
                     <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-full text-sm">
                       También escríbenos por WhatsApp
                     </a>
-                    <button onClick={() => setStatus("idle")} className="text-white/30 text-sm underline">
+                    <button onClick={() => setStatus("idle")} className="text-[#8A8A8E] text-sm underline">
                       Enviar otra consulta
                     </button>
                   </motion.div>
@@ -224,7 +224,7 @@ export function FormSection() {
 
                     <div>
                       <label htmlFor="mensaje" className="label-field">
-                        <span className="flex items-center gap-1.5"><MessageSquare size={12} aria-hidden /> Mensaje adicional <span className="text-white/25 font-normal">(opcional)</span></span>
+                        <span className="flex items-center gap-1.5"><MessageSquare size={12} aria-hidden /> Mensaje adicional <span className="text-[#8A8A8E] font-normal">(opcional)</span></span>
                       </label>
                       <textarea id="mensaje" rows={3} placeholder="Cuéntanos más sobre tu proyecto..."
                         {...register("mensaje")}
@@ -232,7 +232,7 @@ export function FormSection() {
                     </div>
 
                     <button type="submit" disabled={status === "loading"}
-                      className="w-full btn-primary justify-center font-bold py-4 rounded-full hover:bg-white/90 transition-all disabled:opacity-60 text-base mt-2">
+                      className="w-full btn-primary justify-center font-bold py-4 rounded-full transition-all disabled:opacity-60 text-base mt-2">
                       {status === "loading" ? (
                         <><Loader2 size={20} className="animate-spin" /> Enviando...</>
                       ) : (

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-const PHONE_SECONDARY = "(+56 9) 4753 3300";
+const PHONE_SECONDARY = "(+5600a09)00a0475300a03300";
 
 const navLinks = [
   { href: "#nosotros", label: "Nosotros" },

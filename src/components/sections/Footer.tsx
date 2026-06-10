@@ -3,7 +3,7 @@
 import { Mail, Clock, MapPin, Instagram } from "lucide-react";
 import { WHATSAPP_URL, EMAIL, HOURS } from "@/lib/utils";
 
-const PHONE_SECONDARY = "(+56 9) 4753 3300";
+const PHONE_SECONDARY = "(+5600a09)00a0475300a03300";
 
 const navLinks = [
   { href: "#beneficios", label: "Beneficios" },
