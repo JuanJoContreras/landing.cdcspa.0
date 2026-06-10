@@ -8,12 +8,12 @@ const faqs = [
   {
     question: "¿Cuánto tiempo demora la instalación?",
     answer:
-      "Depende de la cantidad de ventanas y complejidad del proyecto. En promedio, una instalación residencial de 6 a 8 ventanas se completa en 1 día hábil. Proyectos más grandes pueden requerir 2 a 3 días. Siempre te informamos el tiempo estimado antes de comenzar.",
+      "Los plazos dependen de la cantidad de ventanas y la complejidad del proyecto. Tu ejecutivo comercial asignado te informará el tiempo estimado específico para tu caso una vez iniciado el proceso.",
   },
   {
     question: "¿Realizan visitas técnicas previas?",
     answer:
-      "Sí, siempre realizamos una visita técnica gratuita antes de emitir una cotización formal. Durante la visita medimos cada vano, evaluamos las condiciones del muro y te asesoramos sobre el sistema más adecuado para cada espacio. Sin compromiso.",
+      "La rectificación de medidas se realiza una vez firmado el contrato. En esa instancia nuestro equipo técnico visita el lugar, mide cada vano con precisión y valida las condiciones antes de proceder a la fabricación.",
   },
   {
     question: "¿Qué garantía tienen las ventanas?",
@@ -47,13 +47,7 @@ const faqs = [
   },
 ];
 
-function FAQItem({
-  faq,
-  index,
-}: {
-  faq: (typeof faqs)[0];
-  index: number;
-}) {
+function FAQItem({ faq, index }: { faq: (typeof faqs)[0]; index: number }) {
   const [open, setOpen] = useState(false);
   const id = `faq-${index}`;
   const panelId = `faq-panel-${index}`;
@@ -72,9 +66,7 @@ function FAQItem({
         </span>
         <span
           className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 ${
-            open
-              ? "bg-brand-blue text-white rotate-0"
-              : "bg-brand-gray-bg text-brand-gray-mid"
+            open ? "bg-brand-blue text-white" : "bg-brand-gray-bg text-brand-gray-mid"
           }`}
           aria-hidden
         >
@@ -94,9 +86,7 @@ function FAQItem({
             className="overflow-hidden"
           >
             <div className="px-6 pb-5 pt-2 bg-white">
-              <p className="text-brand-gray-mid text-sm leading-relaxed">
-                {faq.answer}
-              </p>
+              <p className="text-brand-gray-mid text-sm leading-relaxed">{faq.answer}</p>
             </div>
           </motion.div>
         )}
@@ -107,13 +97,8 @@ function FAQItem({
 
 export function FAQ() {
   return (
-    <section
-      id="faq"
-      className="py-20 md:py-28 bg-white"
-      aria-label="Preguntas frecuentes"
-    >
+    <section id="faq" className="py-20 md:py-28 bg-white" aria-label="Preguntas frecuentes">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -125,12 +110,9 @@ export function FAQ() {
             Preguntas frecuentes
           </span>
           <h2 className="section-title mb-4">¿Tienes dudas? Aquí las resolvemos</h2>
-          <p className="section-subtitle">
-            Las preguntas más comunes de nuestros clientes antes de cotizar.
-          </p>
+          <p className="section-subtitle">Las preguntas más comunes de nuestros clientes antes de cotizar.</p>
         </motion.div>
 
-        {/* FAQ List */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -143,7 +125,6 @@ export function FAQ() {
           ))}
         </motion.div>
 
-        {/* Still have questions */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -151,12 +132,9 @@ export function FAQ() {
           transition={{ duration: 0.5 }}
           className="mt-10 text-center p-8 bg-brand-gray-bg rounded-3xl"
         >
-          <p className="font-semibold text-brand-blue text-lg mb-2">
-            ¿No encontraste lo que buscabas?
-          </p>
+          <p className="font-semibold text-brand-blue text-lg mb-2">¿No encontraste lo que buscabas?</p>
           <p className="text-brand-gray-mid text-sm mb-6">
-            Escríbenos por WhatsApp o solicita tu cotización y te respondemos a
-            la brevedad.
+            Escríbenos por WhatsApp o solicita tu cotización y te respondemos a la brevedad.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
@@ -168,11 +146,7 @@ export function FAQ() {
               Preguntar por WhatsApp
             </a>
             <button
-              onClick={() =>
-                document
-                  .querySelector("#cotizar")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => document.querySelector("#cotizar")?.scrollIntoView({ behavior: "smooth" })}
               className="btn-secondary text-sm px-6 py-3"
             >
               Solicitar cotización

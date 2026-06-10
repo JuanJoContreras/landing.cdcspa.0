@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone } from "lucide-react";
-import { PHONE_DISPLAY } from "@/lib/utils";
+import { Menu, X } from "lucide-react";
 
 const PHONE_SECONDARY = "(+56 9) 4753 3300";
 
@@ -36,9 +35,7 @@ export function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#1A3C5E] shadow-lg"
-          : "bg-[#1A3C5E]/80 backdrop-blur-md"
+        scrolled ? "bg-[#1A3C5E] shadow-lg" : "bg-[#1A3C5E]/80 backdrop-blur-md"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,7 +69,6 @@ export function Navbar() {
                 </button>
               </li>
             ))}
-            {/* ClaroGlass link */}
             <li>
               <a
                 href="https://claroglass.cl"
@@ -87,10 +83,7 @@ export function Navbar() {
 
           {/* Desktop right */}
           <div className="hidden md:flex items-center gap-4 shrink-0">
-            <div className="flex flex-col items-end text-sm">
-              <span className="text-white/60">{PHONE_DISPLAY}</span>
-              <span className="text-white/30 text-xs select-none">{PHONE_SECONDARY}</span>
-            </div>
+            <span className="text-white/40 text-xs select-none">{PHONE_SECONDARY}</span>
             <button
               onClick={() => handleNavClick("#cotizar")}
               className="bg-[#EA580C] hover:bg-[#C2410C] text-white font-bold text-sm px-5 py-2.5 rounded-full transition-all whitespace-nowrap hover:-translate-y-0.5"
@@ -130,7 +123,6 @@ export function Navbar() {
                   {link.label}
                 </button>
               ))}
-              {/* ClaroGlass mobile */}
               <a
                 href="https://claroglass.cl"
                 target="_blank"
@@ -140,10 +132,7 @@ export function Navbar() {
                 ClaroGlass →
               </a>
               <div className="pt-3 flex flex-col gap-2">
-                <div className="flex flex-col px-4 py-2 text-sm">
-                  <span className="text-white/50">{PHONE_DISPLAY}</span>
-                  <span className="text-white/30 text-xs select-none">{PHONE_SECONDARY}</span>
-                </div>
+                <span className="text-white/30 text-xs px-4 select-none">{PHONE_SECONDARY}</span>
                 <button
                   onClick={() => handleNavClick("#cotizar")}
                   className="bg-[#EA580C] text-white font-bold w-full py-3 rounded-full text-sm hover:bg-[#C2410C] transition-colors"
