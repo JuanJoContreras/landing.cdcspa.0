@@ -1,10 +1,8 @@
 "use client";
 
-import { Phone, Mail, Clock, MapPin, Instagram } from "lucide-react";
-import Image from "next/image";
+import { Mail, Clock, MapPin, Instagram } from "lucide-react";
 import { WHATSAPP_URL, EMAIL, HOURS } from "@/lib/utils";
 
-const PHONE_PRIMARY = "(+56 9) 6687 9910";
 const PHONE_SECONDARY = "(+56 9) 4753 3300";
 
 const navLinks = [
@@ -38,16 +36,16 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
 
-          {/* Brand column */}
+          {/* Brand column — mismo estilo que Navbar */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="mb-5">
-              <Image
-                src="/images/logo-cdc.png"
-                alt="CDC SPA – Cierres de Cristal, Ventanas PVC Santiago Chile"
-                width={180}
-                height={60}
-                className="h-14 w-auto object-contain brightness-0 invert opacity-90"
-              />
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center shrink-0">
+                <span className="text-[#1A3C5E] font-black text-xs">CDC</span>
+              </div>
+              <div>
+                <p className="text-white font-bold text-sm leading-tight">CDC SPA</p>
+                <p className="text-white/60 text-xs">Cierres de Cristal</p>
+              </div>
             </div>
             <p className="text-white/65 text-sm leading-relaxed mb-6">
               Fabricamos e instalamos ventanas PVC termopanel de alta calidad en Santiago y todo Chile. Más de 10 años de experiencia y +200 proyectos ejecutados. Cumplimos la Reglamentación Térmica 2025.
@@ -115,10 +113,11 @@ export function Footer() {
             <h3 className="font-bold text-white text-sm uppercase tracking-wider mb-5">Contacto</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-white/60 text-sm">
-                <Phone size={15} className="mt-0.5 shrink-0" aria-hidden />
+                <svg viewBox="0 0 24 24" className="w-4 h-4 mt-0.5 shrink-0 fill-none stroke-current stroke-2" aria-hidden>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                </svg>
                 <div>
-                  <p className="select-none">{PHONE_PRIMARY}</p>
-                  <p className="text-white/40 text-xs select-none">{PHONE_SECONDARY}</p>
+                  <p className="select-none">{PHONE_SECONDARY}</p>
                 </div>
               </li>
               <li>
