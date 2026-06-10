@@ -33,10 +33,9 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#1A3C5E]/60 via-transparent to-transparent" />
       </div>
 
-      {/* Decorative glow */}
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-[#16A34A]/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Content — pt-36 cubre navbar (80px) + banner (~40px) + margen */}
+      {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-16 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
@@ -63,24 +62,6 @@ export function Hero() {
               <span className="block text-[#16A34A] mt-1">que transforman</span>
               tu hogar.
             </motion.h1>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.35 }}
-              className="flex flex-wrap gap-6 mb-6"
-            >
-              {[
-                { value: "47%", label: "menos pérdida de energía" },
-                { value: "68%", label: "ahorro en climatización" },
-                { value: "10+", label: "años de experiencia" },
-              ].map((stat) => (
-                <div key={stat.value} className="flex flex-col">
-                  <span className="text-white font-black text-2xl leading-none">{stat.value}</span>
-                  <span className="text-white/60 text-xs mt-0.5">{stat.label}</span>
-                </div>
-              ))}
-            </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -164,26 +145,25 @@ export function Hero() {
               </motion.div>
             </div>
           </motion.div>
-
         </div>
 
-        {/* Stats bar */}
+        {/* Stats bar — grid 2x2 en mobile, 4 columnas en desktop */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mt-16"
         >
-          <div className="inline-flex flex-wrap gap-px bg-white/10 rounded-2xl overflow-hidden backdrop-blur-sm border border-white/10">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden backdrop-blur-sm border border-white/10">
             {[
               { value: "47%", label: "menos pérdida de energía" },
               { value: "68%", label: "ahorro en climatización" },
               { value: "+200", label: "proyectos ejecutados" },
               { value: "10+", label: "años de experiencia" },
             ].map((stat, i) => (
-              <div key={i} className="flex flex-col items-center px-7 py-4 bg-white/5 hover:bg-white/10 transition-colors">
+              <div key={i} className="flex flex-col items-center px-4 py-5 bg-white/5 hover:bg-white/10 transition-colors">
                 <span className="text-2xl font-black text-white">{stat.value}</span>
-                <span className="text-white/50 text-xs mt-0.5">{stat.label}</span>
+                <span className="text-white/50 text-xs mt-0.5 text-center">{stat.label}</span>
               </div>
             ))}
           </div>
