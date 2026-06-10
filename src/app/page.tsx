@@ -1,4 +1,4 @@
-﻿import { Navbar } from "@/components/sections/Navbar";
+import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { Benefits } from "@/components/sections/Benefits";
 import { WindowTypes } from "@/components/sections/WindowTypes";
@@ -9,12 +9,10 @@ import { Gallery } from "@/components/sections/Gallery";
 import { FAQ } from "@/components/sections/FAQ";
 import { Footer } from "@/components/sections/Footer";
 import { WhatsAppFloat } from "@/components/ui/WhatsAppFloat";
-import { UrgencyBanner } from "@/components/ui/UrgencyBanner";
 
 export default function Home() {
   return (
     <main>
-      <UrgencyBanner />
       <Navbar />
       <Hero />
       <Benefits />
@@ -29,6 +27,3 @@ export default function Home() {
     </main>
   );
 }
-// v5.1
-
-

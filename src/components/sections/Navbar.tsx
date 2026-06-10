@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Zap } from "lucide-react";
 
 const navLinks = [
   { href: "#nosotros", label: "Nosotros" },
@@ -15,6 +15,7 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [bannerVisible, setBannerVisible] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -36,10 +37,46 @@ export function Navbar() {
         scrolled ? "bg-[#1A3C5E] shadow-lg" : "bg-[#1A3C5E]/80 backdrop-blur-md"
       }`}
     >
+      {/* Urgency Banner integrado */}
+      <AnimatePresence>
+        {bannerVisible && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="bg-[#EA580C] text-white text-xs sm:text-sm overflow-hidden"
+            role="banner"
+          >
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-3">
+              <div className="flex items-center gap-2 flex-1 justify-center">
+                <Zap size={14} className="fill-white shrink-0" aria-hidden />
+                <span className="font-medium text-center text-white">
+                  <strong>Especialistas en ventanas PVC premium</strong> · Cotización sin costo ·{" "}
+                  <button
+                    onClick={() => document.querySelector("#cotizar")?.scrollIntoView({ behavior: "smooth" })}
+                    className="underline underline-offset-2 font-bold hover:no-underline text-white"
+                  >
+                    Cotiza ahora →
+                  </button>
+                </span>
+              </div>
+              <button
+                onClick={() => setBannerVisible(false)}
+                className="text-white/80 hover:text-white shrink-0 p-0.5"
+                aria-label="Cerrar"
+              >
+                <X size={15} />
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Nav */}
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20 gap-4">
 
-          {/* Logo */}
           <a href="#inicio"
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
             className="flex items-center gap-3 shrink-0 group">
@@ -52,7 +89,6 @@ export function Navbar() {
             </div>
           </a>
 
-          {/* Desktop nav */}
           <ul className="hidden lg:flex items-center gap-7 flex-1 justify-center">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -71,7 +107,6 @@ export function Navbar() {
             </li>
           </ul>
 
-          {/* Desktop right */}
           <div className="hidden md:flex items-center gap-4 shrink-0">
             <span className="text-white/40 text-xs select-none">
               (+56 9) 4753&#8209;3300
@@ -82,7 +117,6 @@ export function Navbar() {
             </button>
           </div>
 
-          {/* Mobile hamburger */}
           <button onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors shrink-0"
             aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}>
