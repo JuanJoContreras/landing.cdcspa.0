@@ -4,6 +4,8 @@ import { Phone, Mail, Clock, MapPin, Instagram } from "lucide-react";
 import Image from "next/image";
 import { WHATSAPP_URL, EMAIL, PHONE_DISPLAY, HOURS } from "@/lib/utils";
 
+const PHONE_SECONDARY = "(+56 9) 4753 3300";
+
 const navLinks = [
   { href: "#beneficios", label: "Beneficios" },
   { href: "#productos", label: "Nuestros Productos" },
@@ -118,7 +120,10 @@ export function Footer() {
                   aria-label={`Llamar a CDC SPA al ${PHONE_DISPLAY}`}
                 >
                   <Phone size={15} className="mt-0.5 shrink-0 group-hover:text-[#16A34A] transition-colors" aria-hidden />
-                  <p>{PHONE_DISPLAY}</p>
+                  <div>
+                    <p>{PHONE_DISPLAY}</p>
+                    <p className="text-white/40 text-xs select-none">{PHONE_SECONDARY}</p>
+                  </div>
                 </a>
               </li>
               <li>
@@ -163,11 +168,15 @@ export function Footer() {
           <p className="text-white/40 text-xs">
             © {currentYear} CDC SPA – Cierres de Cristal · Ventanas PVC Santiago Chile. Todos los derechos reservados.
           </p>
-          <p className="text-white/30 text-xs">
-            Distribuidores de sistemas PVC calidad europea en Chile
-          </p>
+          <a
+            href="/politica-de-privacidad"
+            className="text-white/30 hover:text-white/60 text-xs underline underline-offset-2 transition-colors"
+          >
+            Política de Privacidad
+          </a>
         </div>
       </div>
     </footer>
   );
 }
+
